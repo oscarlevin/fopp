@@ -1,0 +1,34 @@
+<section xml:id="iteration_the-gory-details-iterables-iter-iterators">
+        <title>The Gory Details: Iterables</title>
+        <p>The general syntax of a for loop is:</p>
+        <program language="python"><input>
+for iter_var_name in some_seq:
+    # code block line 1
+    # code block line 2
+    # ...
+</input></program>
+        <p>After the word <c>in</c>, there can be any Python expression that evaluates to a sequence. You have already seen iteration
+            over strings and lists. A string is a sequence whose items are single characters. A list is a sequence whose items can be
+            any kind of Python object.</p>
+        <p>Actually, the for loop is a little more general. It can iterate not just over strings and lists, but any kind of Python
+            object that acts like a sequence. So far, strings, lists, and tuples are all we have seen.</p>
+        <p>We will also see later some Python objects that act like sequences for the purposes of iteration with a for loop. These include
+            file objects and iterators.</p>
+        <p>In fact, we have actually already seen one of these without noticing, because it hardly matters. Technically, the
+            <c>range</c> function doesn't actually return a list. That is, <c>range(3)</c> doesn't actually create the list <c>[0, 1, 2]</c>.
+            It returns an object that acts just like the list <c>[0, 1, 2]</c>, when used in a for loop. The difference is that the
+            numbers 0, 1, and 2 are produced as they are needed rather than all created in advance. This hardly matters when there are
+            only three items. For <c>range(10000000)</c> it makes a little difference for how fast the program runs and how much memory
+            is used. That's why the items are produced as needed rather than all produced in advance.</p>
+        <p>For the purposes of this book, however, the difference will rarely matter. You will be safe to think of the range function as
+            if it returns a list object. Indeed, the Python interpreter that's built into the textbook cheats a little bit and makes
+            the range function actually produce a list. When you run a native Python interpreter on your computer it won't cheat in
+            that way. Still, when you run code of the form, <c>for x in range(y)</c> you will usually do just fine to think of range(y) returning
+            a list.</p>
+        <p>Don't worry about understanding these details right now. The important point is that in the activecode window above,
+            instead of <c>some_seq</c> you can have any Python expression that evaluates to a string, a list, or certain other Python
+            objects that act like sequences for the purposes of use in for loops. It's just something to keep in mind for later, when
+            we see some of those other Python objects that act like sequences but aren't quite.</p>
+        
+    </section>
+

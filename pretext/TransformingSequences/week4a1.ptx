@@ -1,0 +1,1380 @@
+<section xml:id="transforming-sequences_chapter-assessment-list-methods">
+        <title>Chapter Assessment - List Methods</title>
+        <p><term>Check your understanding</term></p>
+
+    <exercise label="assess_question4_1_1_1">
+        <statement>
+
+        <p>Which of these is a correct reference diagram following the execution of the following code?</p>
+        <program language="python"><input>
+lst = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
+lst.remove('pluto')
+first_three = lst[:3]
+</input></program>
+        <p><ol label="I">
+            <li>
+            </li>
+        </ol></p>
+        <image source="TransformingSequences/Figures/week3a1_1.png" width="50%" alt="First Potential Solution"/>
+        <p><ol label="I">
+            <li>
+            </li>
+        </ol></p>
+        <image source="TransformingSequences/Figures/week3a1_2.png" width="50%" alt="Second Potential Solution"/>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>I.</p>
+                </statement>
+                <feedback>
+                    <p>Yes, when we are using the remove method, we are just editing the existing list, not making a new copy.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>II.</p>
+                </statement>
+                <feedback>
+                    <p>When we use the remove method, we just edit the existing list. We do not make a new copy that does not include the removed object.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>Neither is the correct reference diagram.</p>
+                </statement>
+                <feedback>
+                    <p>One of the diagrams is correct - look again at what is happening to lst.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question4_1_1_2">
+        <statement>
+
+        <p>Which method would you use to figure out the position of an item in a list?</p>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>.pop()</p>
+                </statement>
+                <feedback>
+                    <p>pop removes and returns items (default is to remove and return the last item in the list)</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>.insert()</p>
+                </statement>
+                <feedback>
+                    <p>insert will add an item at whatever position is specified.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>.count()</p>
+                </statement>
+                <feedback>
+                    <p>count returns the number of times something occurs in a list</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>.index()</p>
+                </statement>
+                <feedback>
+                    <p>Yes, index will return the position of the first occurance of an item.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question4_1_1_3">
+        <statement>
+
+        <p>Which method is best to use when adding an item to the end of a list?</p>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>.insert()</p>
+                </statement>
+                <feedback>
+                    <p>While you can use insert, it is not the best method to use because you need to specify that you want to stick the new item at the end.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>.pop()</p>
+                </statement>
+                <feedback>
+                    <p>pop removes an item from a list</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>.append()</p>
+                </statement>
+                <feedback>
+                    <p>Yes, though you can use insert to do the same thing, you don't need to provide the position.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>.remove()</p>
+                </statement>
+                <feedback>
+                    <p>remove gets rid of the first occurance of any item that it is told. It does not add an item.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+<exercise label="assess_ac4_1_1_4">
+    <statement>
+        <p>Write code to add &#8216;horseback riding' to the third position (i.e., right before volleyball) in the list <c>sports</c>.</p>
+
+    </statement>
+    <program xml:id="assess_ac4_1_1_4_editor" interactive="activecode" language="python">
+
+        <input>
+sports = ['cricket', 'football', 'volleyball', 'baseball', 'softball', 'track and field', 'curling', 'ping pong', 'hockey']
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+  def test_output(self):
+    self.assertEqual(sports, ['cricket', 'football', 'horseback riding', 'volleyball', 'baseball', 'softball', 'track and field', 'curling', 'ping pong', 'hockey'], "Testing that sports is set correctly.")
+    self.assertIn('.insert(', self.getEditorText(), "Testing that insert was used in your code.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="assess_ac4_1_1_5">
+    <statement>
+        <p>Write code to take &#8216;London' out of the list <c>trav_dest</c>.</p>
+
+    </statement>
+    <program xml:id="assess_ac4_1_1_5_editor" interactive="activecode" language="python">
+
+        <input>
+trav_dest = ['Beirut', 'Milan', 'Pittsburgh', 'Buenos Aires', 'Nairobi', 'Kathmandu', 'Osaka', 'London', 'Melbourne']
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+  def test_output(self):
+    self.assertEqual(trav_dest, ['Beirut', 'Milan', 'Pittsburgh', 'Buenos Aires', 'Nairobi', 'Kathmandu', 'Osaka', 'Melbourne'], "Testing that trav_dest is set correctly.")
+    self.assertTrue('.remove(' in self.getEditorText() or '.pop(' in self.getEditorText(), "Testing that a method invocation was used in your code.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="assess_ac4_1_1_6">
+    <statement>
+        <p>Write code to add &#8216;Guadalajara' to the end of the list <c>trav_dest</c> using a list method.</p>
+
+    </statement>
+    <program xml:id="assess_ac4_1_1_6_editor" interactive="activecode" language="python">
+
+        <input>
+trav_dest = ['Beirut', 'Milan', 'Pittsburgh', 'Buenos Aires', 'Nairobi', 'Kathmandu', 'Osaka', 'Melbourne']
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+  def test_output(self):
+    self.assertEqual(trav_dest, ['Beirut', 'Milan', 'Pittsburgh', 'Buenos Aires', 'Nairobi', 'Kathmandu', 'Osaka', 'Melbourne', 'Guadalajara'], "Testing that trav_dest is set correctly.")
+    self.assertNotIn('+', self.getEditorText(), "Testing that you are not using concatenation (+).")
+    self.assertIn('.', self.getEditorText(), "Testing that a method invocation was used in your code.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+        <subsection xml:id="transforming-sequences_chapter-assessment-aliases-and-references">
+            <title>Chapter Assessment - Aliases and References</title>
+            <p><term>Check your understanding</term></p>
+
+        <exercise label="assess_question3_3_1_1">
+            <statement>
+    <p>What will be the value of <c>a</c> after the following code has executed? <var/>  </p></statement><setup><var><program language="python"><input>
+a = ["holiday", "celebrate!"]
+quiet = a
+quiet.append("company")
+</input></program><p>The value of <c>a</c> will be</p><condition string="^\s*\[[&quot;']holiday[&quot;'],\s+[&quot;']celebrate![&quot;'],\s+[&quot;']company[&quot;']\]\s*$"><feedback><p>Good work!</p></feedback></condition></var></setup></exercise>
+    <exercise label="assess_question3_3_1_2">
+        <statement>
+
+            <p>Could aliasing cause potential confusion in this problem?</p>
+            <program language="python"><input>
+b = ['q', 'u', 'i']
+z = b
+b[1] = 'i'
+z.remove('i')
+print(z)
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>yes</p>
+                </statement>
+                <feedback>
+                    <p>Yes, b and z reference the same list and changes are made using both aliases.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>no</p>
+                </statement>
+                <feedback>
+                    <p>Can you figure out what the value of b is only by looking at the lines that mention b?</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question3_3_1_4">
+        <statement>
+
+            <p>Could aliasing cause potential confusion in this problem?</p>
+            <program language="python"><input>
+sent = "Holidays can be a fun time when you have good company!"
+phrase = sent
+phrase = phrase + " Holidays can also be fun on your own!"
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>yes</p>
+                </statement>
+                <feedback>
+                    <p>Since a string is immutable, aliasing won't be as confusing. Beware of using something like item = item + new_item with mutable objects though because it creates a new object. However, when we use += then that doesn't happen.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>no</p>
+                </statement>
+                <feedback>
+                    <p>Since a string is immutable, aliasing won't be as confusing. Beware of using something like item = item + new_item with mutable objects though because it creates a new object. However, when we use += then that doesn't happen.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question3_3_1_5">
+        <statement>
+
+            <p>Which of these is a correct reference diagram following the execution of the following code?</p>
+            <program language="python"><input>
+x = ["dogs", "cats", "birds", "reptiles"]
+y = x
+x += ['fish', 'horses']
+y = y + ['sheep']
+</input></program>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a3_1.png" width="50%" alt="First Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a3_2.png" width="50%" alt="Second Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a3_3.png" width="50%" alt="Third Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a3_4.png" width="50%" alt="Fourth Potential Solution"/>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>I.</p>
+                </statement>
+                <feedback>
+                    <p>When an object is concatenated with another using +=, it extends the original object. If this is done in the longer form (item = item + object) then it makes a copy.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>II.</p>
+                </statement>
+                <feedback>
+                    <p>When an object is concatenated with another using +=, it extends the original object. If this is done in the longer form (item = item + object) then it makes a copy.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>III.</p>
+                </statement>
+                <feedback>
+                    <p>When an object is concatenated with another using +=, it extends the original object. If this is done in the longer form (item = item + object) then it makes a copy.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>IV.</p>
+                </statement>
+                <feedback>
+                    <p>Yes, the behavior of obj = obj + object_two is different than obj += object_two when obj is a list. The first version makes a new object entirely and reassigns to obj. The second version changes the original object so that the contents of object_two are added to the end of the first.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+        </subsection>
+        <subsection xml:id="transforming-sequences_chapter-assessment-split-and-join">
+            <title>Chapter Assessment - Split and Join</title>
+
+    <exercise label="assess_question4_1_3_1">
+        <statement>
+
+            <p>Which of these is a correct reference diagram following the execution of the following code?</p>
+            <program language="python"><input>
+sent = "The mall has excellent sales right now."
+wrds = sent.split()
+wrds[1] = 'store'
+new_sent = " ".join(wrds)
+</input></program>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a2_1.png" width="50%" alt="First Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a2_2.png" width="50%" alt="Second Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a2_3.png" width="50%" alt="Third Potential Solution"/>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <image source="TransformingSequences/Figures/week3a2_4.png" width="50%" alt="Fourth Potential Solution"/>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>I.</p>
+                </statement>
+                <feedback>
+                    <p>Yes, when we make our own diagrams we want to keep the old information because sometimes other variables depend on them. It can get cluttered though if there is a lot of information.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>II.</p>
+                </statement>
+                <feedback>
+                    <p>Not quite, we want to keep track of old information because sometimes other variables depend on them.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>III.</p>
+                </statement>
+                <feedback>
+                    <p>Look again at what is happening when join is executed.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>IV.</p>
+                </statement>
+                <feedback>
+                    <p>What happens to the spaces in a string when it is split by whitespace?</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+<exercise label="assess_ac_4_1_3_2">
+    <statement>
+            <p>Write code to find the position of the string <q>Tony</q> in the list <c>awards</c> and save that information in the variable <c>pos</c>.</p>
+
+    </statement>
+    <program xml:id="assess_ac_4_1_3_2_editor" interactive="activecode" language="python">
+
+        <input>
+awards = ['Emmy', 'Tony', 'Academy', 'Grammy']
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+  def test_output(self):
+    self.assertEqual(pos, 1, "Testing that pos is set correctly.")
+    self.assertIn('.index(', self.getEditorText(), "Testing that a method invocation was used in your code.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+        </subsection>
+        <subsection xml:id="transforming-sequences_chapter-assessment-for-loop-mechanics">
+            <title>Chapter Assessment - For Loop Mechanics</title>
+            <p><term>Check your understanding</term></p>
+
+    <exercise label="assess_question5_1_1_1">
+        <statement>
+
+            <p>Which of these is the accumulator variable?</p>
+            <program language="python"><input>
+byzo = 'hello world!'
+c = 0
+for x in byzo:
+    z = x + "!"
+    print(z)
+    c = c + 1
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>byzo</p>
+                </statement>
+                <feedback>
+                    <p>This is the variable with our string, but it does not accumulate anything.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>x</p>
+                </statement>
+                <feedback>
+                    <p>This is the iterator variable. It changes each time but does not accumulate.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>z</p>
+                </statement>
+                <feedback>
+                    <p>This is a variable inside the for loop. It changes each time but does not accumulate or retain the old expressions that were assigned to it.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>c</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this is the accumulator variable. By the end of the program, it will have a full count of how many items are in byzo.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_1_1_2">
+        <statement>
+
+            <p>Which of these is the sequence?</p>
+            <program language="python"><input>
+cawdra = ['candy', 'daisy', 'pear', 'peach', 'gem', 'crown']
+t = 0
+for elem in cawdra:
+    t = t + len(elem)
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>cawdra</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this is the sequence that we iterate over.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>elem</p>
+                </statement>
+                <feedback>
+                    <p>This is the iterator variable. It changes each time but is not the whole sequence itself.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>t</p>
+                </statement>
+                <feedback>
+                    <p>This is the accumulator variable. By the end of the program, it will have a full count of how many items are in cawdra.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_1_1_3">
+        <statement>
+
+            <p>Which of these is the iterator (loop) variable?</p>
+            <program language="python"><input>
+lst = [5, 10, 3, 8, 94, 2, 4, 9]
+num = 0
+for item in lst:
+    num += item
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>item</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this is the iterator variable. It changes each time but is not the whole sequence itself.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>lst</p>
+                </statement>
+                <feedback>
+                    <p>This is the sequence that we iterate over.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>num</p>
+                </statement>
+                <feedback>
+                    <p>This is the accumulator variable. By the end of the program, it will have the total value of the integers that are in lst.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+        <exercise label="assess_question5_1_1_4">
+            <statement>
+    <p>What is the iterator (loop) variable in the following? <var/>  </p></statement><setup><var><program language="python"><input>
+rest = ["sleep", 'dormir', 'dormire', "slaap", 'sen', 'yuxu', 'yanam']
+let = ''
+for phrase in rest:
+    let += phrase[0]
+</input></program><p>The iterator variable is</p><condition string="^\s*phrase\s*$"><feedback><p>Good work!</p></feedback></condition><condition string="^\s*rest\s*$"><feedback><p>rest is the sequence, not the iterator variable.</p></feedback></condition></var></setup></exercise>
+<exercise label="assess_week5_01">
+    <statement>
+            <p>Currently there is a string called <c>str1</c>. Write code to create a list called <c>chars</c> which should contain the characters from <c>str1</c>. Each character in <c>str1</c> should be its own element in the list <c>chars</c>.</p>
+
+    </statement>
+    <program xml:id="assess_week5_01_editor" interactive="activecode" language="python">
+
+        <input>
+str1 = "I love python"
+# HINT: what's the accumulator? That should go here.
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(chars, ['I', ' ', 'l', 'o', 'v', 'e', ' ', 'p', 'y', 't', 'h', 'o', 'n'], "Testing that chars is assigned the correct value.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+        </subsection>
+        <subsection xml:id="transforming-sequences_chapter-assessment-accumulator-pattern">
+            <title>Chapter Assessment - Accumulator Pattern</title>
+            <p><term>Check your understanding</term></p>
+
+    <exercise label="assess_question5_2_1_1">
+        <statement>
+
+            <p>Given that we want to accumulate the total sum of a list of numbers, which of the following accumulator patterns would be appropriate?</p>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+nums = [4, 5, 2, 93, 3, 5]
+s = 0
+for n in nums:
+    s = s + 1
+</input></program>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+nums = [4, 5, 2, 93, 3, 5]
+s = 0
+for n in nums:
+    s = n + n
+</input></program>
+            <p><ol label="I">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+nums = [4, 5, 2, 93, 3, 5]
+s = 0
+for n in nums:
+    s = s + n
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>I.</p>
+                </statement>
+                <feedback>
+                    <p>This pattern will only count how many items are in the list, not provide the total accumulated value.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>II.</p>
+                </statement>
+                <feedback>
+                    <p>This would reset the value of s each time the for loop iterated, and so by the end s would be assigned the value of the last item in the list plus the last item in the list.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>III.</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this will solve the problem.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above would be appropriate for the problem.</p>
+                </statement>
+                <feedback>
+                    <p>One of the patterns above is a correct way to solve the problem.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_2_1_2">
+        <statement>
+
+            <p>Given that we want to accumulate the total number of strings in the list, which of the following accumulator patterns would be appropriate?</p>
+            <p><ol label="1">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+lst = ['plan', 'answer', 5, 9.29, 'order, items', [4]]
+s = 0
+for n in lst:
+    s = s + n
+</input></program>
+            <p><ol label="1">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+lst = ['plan', 'answer', 5, 9.29, 'order, items', [4]]
+for item in lst:
+    s = 0
+    if type(item) == type("string"):
+        s = s + 1
+</input></program>
+            <p><ol label="1">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+lst = ['plan', 'answer', 5, 9.29, 'order, items', [4]]
+s = ""
+for n in lst:
+    s = s + n
+</input></program>
+            <p><ol label="1">
+                <li>
+                </li>
+            </ol></p>
+            <program language="python"><input>
+lst = ['plan', 'answer', 5, 9.29, 'order, items', [4]]
+s = 0
+for item in lst:
+    if type(item) == type("string"):
+        s = s + 1
+</input></program>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>1.</p>
+                </statement>
+                <feedback>
+                    <p>How does this solution know that the element of lst is a string and that s should be updated?</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>2.</p>
+                </statement>
+                <feedback>
+                    <p>What happens to s each time the for loop iterates?</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>3.</p>
+                </statement>
+                <feedback>
+                    <p>Reread the prompt again, what do we want to accumulate?</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>4.</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this will solve the problem.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above would be appropriate for the problem.</p>
+                </statement>
+                <feedback>
+                    <p>One of the patterns above is a correct way to solve the problem.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_2_1_3">
+        <statement>
+
+            <p>Which of these are good names for an accumulator variable? Select as many as apply.</p>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>sum</p>
+                </statement>
+                <feedback>
+                    <p>No, though sum might be clear, it is also the name of a commonly used function in Python, and so there can be issues if sum is used as an accumulator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>x</p>
+                </statement>
+                <feedback>
+                    <p>No, x is not a clear enough name to be used for an accumulator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>total</p>
+                </statement>
+                <feedback>
+                    <p>Yes, total is a good name for accumulating numbers.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>accum</p>
+                </statement>
+                <feedback>
+                    <p>Yes, accum is a good name. It's both short and easy to remember.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above</p>
+                </statement>
+                <feedback>
+                    <p>At least one of the answers above is a good name for an accumulator variable.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_2_1_4">
+        <statement>
+
+            <p>Which of these are good names for an iterator (loop) variable? Select as many as apply.</p>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>item</p>
+                </statement>
+                <feedback>
+                    <p>Yes, item can be a good name to use as an iterator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>y</p>
+                </statement>
+                <feedback>
+                    <p>No, y is not likely to be a clear name for the iterator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>elem</p>
+                </statement>
+                <feedback>
+                    <p>Yes, elem can be a good name to use as an iterator variable, especially when iterating over lists.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>char</p>
+                </statement>
+                <feedback>
+                    <p>Yes, char can be a good name to use when iterating over a string, because the iterator variable would be assigned a character each time.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above</p>
+                </statement>
+                <feedback>
+                    <p>At least one of the answers above is a good name for an iterator variable.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_2_1_5">
+        <statement>
+
+            <p>Which of these are good names for a sequence variable? Select as many as apply.</p>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>num_lst</p>
+                </statement>
+                <feedback>
+                    <p>Yes, num_lst is good for a sequence variable if the value is actually a list of numbers.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>p</p>
+                </statement>
+                <feedback>
+                    <p>No, p is not likely to be a clear name for the iterator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>sentence</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this is good to use if the for loop is iterating through a string.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>names</p>
+                </statement>
+                <feedback>
+                    <p>Yes, names is good, assuming that the for loop is iterating through actual names and not something unrelated to names.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above</p>
+                </statement>
+                <feedback>
+                    <p>At least one of the answers above is a good name for a sequence variable</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="assess_question5_2_1_6">
+        <statement>
+
+            <p>Given the following scenario, what are good names for the accumulator variable, iterator variable, and sequence variable? You are writing code that uses a list of sentences and accumulates the total number of sentences that have the word &#8216;happy' in them.</p>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>accumulator variable: x | iterator variable: s | sequence variable: lst</p>
+                </statement>
+                <feedback>
+                    <p>Though lst is an acceptable name, x and s are not informative names for accumulator and iterator variables.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>accumulator variable: total | iterator variable: s | sequence variable: lst</p>
+                </statement>
+                <feedback>
+                    <p>Though total is great and lst is an acceptable name, s is a little bit cryptic as a variable name referring to a sentence.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>accumulator variable: x | iterator variable: sentences | sequence variable: sentence_lst</p>
+                </statement>
+                <feedback>
+                    <p>Though sentence_lst is a good name, the iterator variable should be singular rather than plural, and x is not an informative name for the accumulator variable.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>accumulator variable: total | iterator variable: sentence |sequence variable: sentence_lst</p>
+                </statement>
+                <feedback>
+                    <p>Yes, this combination of variable names is the clearest.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>none of the above</p>
+                </statement>
+                <feedback>
+                    <p>One of the options above has good names for the scenario.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+<exercise label="access_ac_5_2_1_1">
+    <statement>
+            <p>For each character in the string saved in <c>ael</c>, append that character to a list that should be saved in a variable <c>app</c>.</p>
+
+    </statement>
+    <program xml:id="access_ac_5_2_1_1_editor" interactive="activecode" language="python">
+
+        <input>
+ael = "python!"
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(app, ['p','y','t','h','o','n', "!"], "Testing that app has the correct elements." )
+      self.assertIn('append', self.getEditorText(), "Testing that your code uses append.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="access_ac_5_2_1_2">
+    <statement>
+            <p>For each string in <c>wrds</c>, add &#8216;ed' to the end of the word (to make the word past tense). Save these past tense words to a list called <c>past_wrds</c>.</p>
+
+    </statement>
+    <program xml:id="access_ac_5_2_1_2_editor" interactive="activecode" language="python">
+
+        <input>
+wrds = ["end", 'work', "play", "start", "walk", "look", "open", "rain", "learn", "clean"]
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(past_wrds, ["ended", 'worked', "played", "started", "walked", "looked", "opened", "rained", "learned", "cleaned"], "Testing that past_wrds has the correct value." )
+      self.assertIn('for ', self.getEditorText(), "Testing that your code uses a for loop.")
+
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="assess_ps_02_06">
+    <statement>
+            <p>Write code to create a <term>list of word lengths</term> for the words in <c>original_str</c> using the accumulation pattern and assign the answer to a variable <c>num_words_list</c>. (You should use the <c>len</c> function).</p>
+
+    </statement>
+    <program xml:id="assess_ps_02_06_editor" interactive="activecode" language="python">
+
+        <input>
+original_str = "The quick brown rhino jumped over the extremely lazy fox"
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+    def testOne(self):
+       self.assertEqual(num_words_list, [len(x) for x in original_str.split()], "Testing whether num_words_list has the correct value")
+       self.assertIn('for', self.getEditorText(), "Testing that you are using a for loop in your code.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="assess_pc_02_10">
+    <statement>
+            <p>Create an empty string and assign it to the variable <c>lett</c>. Then using range, write code such that when your code is run, <c>lett</c> has 7 b's (<c>"bbbbbbb"</c>).</p>
+
+    </statement>
+    <program xml:id="assess_pc_02_10_editor" interactive="activecode" language="python">
+
+        <input>
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(lett, "bbbbbbb", "Testing that lett has the correct value." )
+      self.assertNotIn("bbbbbbb", self.getEditorText(), "Testing that you didn't hardcode the answer.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+        </subsection>
+        <subsection xml:id="transforming-sequences_chapter-assessment-problem-solving">
+            <title>Chapter Assessment - Problem Solving</title>
+
+<exercise label="asign_c01_01">
+    <statement>
+            <p>Below are a set of scores that students have received in the past semester. Write code to determine how many are 90 or above and assign that result to the value <c>a_scores</c>.</p>
+
+    </statement>
+    <program xml:id="asign_c01_01_editor" interactive="activecode" language="python">
+
+        <input>
+scores = "67 80 90 78 93 20 79 89 96 97 92 88 79 68 58 90 98 100 79 74 83 88 80 86 85 70 90 100"
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(a_scores, 10, "Testing that you got the right count.")
+      self.assertIn('for', self.getEditorText(), "Testing that you used a for loop.")
+      self.assertIn('if', self.getEditorText(), "Testing that you used a conditional.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="asign_c01_02">
+    <statement>
+            <p>Write code that uses the string stored in <c>org</c> and creates an acronym which is assigned to the variable <c>acro</c>. Only the first letter of each word should be used, each letter in the acronym should be a capital letter, and there should be nothing to separate the letters of the acronym. Words that should not be included in the acronym are stored in the list <c>stopwords</c>. For example, if <c>org</c> was assigned the string <q>hello to world</q> then the resulting acronym should be <q>HW</q>.</p>
+
+    </statement>
+    <program xml:id="asign_c01_02_editor" interactive="activecode" language="python">
+
+        <input>
+stopwords = ['to', 'a', 'for', 'by', 'an', 'am', 'the', 'so', 'it', 'and', "The"]
+org = "The organization for health, safety, and education"
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(acro, 'OHSE', 'Checking that acro has been set correctly.')
+      self.assertTrue(type(acro) == type("string"), "Checking that acro is a string.")
+      self.assertIn('for', self.getEditorText(), "Testing that you used a for loop.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="asign_c01_03">
+    <statement>
+            <p>Write code that uses the string stored in <c>sent</c> and creates an acronym which is assigned to the variable <c>acro</c>. The first two letters of each word should be used, each letter in the acronym should be a capital letter, and each element of the acronym should be separated by a <q>. <q> (dot and space). Words that should not be included in the acronym are stored in the list <c>stopwords</c>. For example, if <c>sent</c> was assigned the string <q>height and ewok wonder</q> then the resulting acronym should be <q>HE. EW. WO</q>.</p>
+
+    </statement>
+    <program xml:id="asign_c01_03_editor" interactive="activecode" language="python">
+
+        <input>
+stopwords = ['to', 'a', 'for', 'by', 'an', 'am', 'the', 'so', 'it', 'and', 'The']
+sent = "The water earth and air are vital"
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(acro, 'WA. EA. AI. AR. VI', 'Checking that acro has been set correctly.')
+      self.assertTrue(type(acro) == type("string"), "Checking that acro is a string.")
+      self.assertIn('for', self.getEditorText(), "Testing that you used a for loop.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="asign_c01_04">
+    <statement>
+            <p>A palindrome is a phrase that, if reversed, would read the exact same. Write code that checks if <c>p_phrase</c> is a palindrome by reversing it and then checking if the reversed version is equal to the original. Assign the reversed version of <c>p_phrase</c> to the variable <c>r_phrase</c> so that we can check your work.</p>
+
+    </statement>
+    <program xml:id="asign_c01_04_editor" interactive="activecode" language="python">
+
+        <input>
+p_phrase = "was it a car or a cat I saw"
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+      self.assertEqual(r_phrase, "was I tac a ro rac a ti saw", "checking that r_phrase is set correctly")
+      stripped_phrase = p_phrase.replace(" ", "").lower()
+      stripped_r_phrase = r_phrase.replace(" ", "").lower()
+      self.assertEqual(stripped_phrase, stripped_r_phrase, "checking that r_phrase and p_phrase are equivalent if the spaces are placed in the correct locations.")
+      self.assertIsNot(p_phrase, r_phrase, "checking that r_phrase and p_phrase are not the same object.")
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+
+<exercise label="asign_c01_05">
+    <statement>
+            <p>Provided is a list of data about a store's inventory where each item in the list represents the name of an item, how much is in stock, and how much it costs. Print out each item in the list with the same formatting, using the .format method (not string concatenation). For example, the first print statment should read <c>The store has 12 shoes, each for 29.99 USD.</c></p>
+
+    </statement>
+    <program xml:id="asign_c01_05_editor" interactive="activecode" language="python">
+
+        <input>
+inventory = ["shoes, 12, 29.99", "shirts, 20, 9.99", "sweatpants, 25, 15.00", "scarves, 13, 7.75"]
+
+
+=====
+
+from unittest.gui import TestCaseGui
+
+class myTests(TestCaseGui):
+
+   def testOne(self):
+       self.assertIn('for', self.getEditorText(), "Testing whether your code includes a for loop.")
+       self.assertIn('.format(', self.getEditorText(), "Testing whether your code invokes the .format method.")
+       self.assertIn('The store has 12 shoes, each for 29.99 USD.\nThe store has 20 shirts, each for 9.99 USD.\nThe store has 25 sweatpants, each for 15.00 USD.\nThe store has 13 scarves, each for 7.75 USD.\n', self.getOutput(), "Testing your output.")
+
+
+
+myTests().main()
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+</exercise>
+        </subsection>
+    </section>
+

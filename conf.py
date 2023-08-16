@@ -29,7 +29,7 @@ import pkg_resources
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ["sphinx.ext.mathjax", "jupyterlite_sphinx"] + runestone_extensions()
+extensions = ["sphinx.ext.mathjax"] + runestone_extensions()
 
 # jupyterlite_dir = "."
 

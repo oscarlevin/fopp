@@ -1,0 +1,31 @@
+<section xml:id="inheritance_multiple-inheritance">
+        <title>Multiple inheritance</title>
+        <p>In Python, a class can inherit from more than one parent class. This is called <term>multiple inheritance</term>. Multiple inheritance can be useful when you want to create a class that is a combination of multiple classes. For example, suppose we have a class <c>Swimmer</c> (which represents all of the aspects of a character that can swim) and a class <c>Flyer</c> (for all of the aspects of a character that relate to flying). We can create a class <c>Goose</c> that inherits from both <c>Swimmer</c> and <c>Flyer</c> by putting both these class names in parentheses: <c>class Goose(Swimmer, Flyer)</c>. This class will have all the methods and attributes of both <c>Swimmer</c> and <c>Flyer</c>:</p>
+
+    <program xml:id="multiple_inheritance_example" interactive="activecode" language="python">
+    
+        <input>
+class Swimmer:
+    def swim(self):
+        print("Swimming!")
+
+class Flyer:
+    def fly(self):
+        print("Flying!")
+
+class Goose(Swimmer, Flyer):
+    pass
+
+my_goose = Goose()
+my_goose.swim() # Swimming!
+my_goose.fly()  # Flying!
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+        <p>Multiple inheritance can improve our ability to re-use code and classes. It can be particularly useful if the classes represent <q>features</q> that we can selectively apply to subclasses. However, <term>it's generally a good rule to avoid multiple inheritance unless it provides a clear and significant benefit</term>. Always consider simpler alternatives, such as composition (using an instance of one class as an instance variable inside of another class) or single inheritance, before turning to multiple inheritance.</p>
+    </section>
+

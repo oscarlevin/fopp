@@ -1,0 +1,5 @@
+/workspaces/fopp/pretext/main.ptx:6:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element idx, got subtitle
+/workspaces/fopp/pretext/main.ptx:3:0:ERROR:RELAXNGV:RELAXNG_ERR_NOTELEM: Expecting an element got text
+/workspaces/fopp/pretext/main.ptx:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element section there
+/workspaces/fopp/pretext/main.ptx:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element sidebyside, got section
+/workspaces/fopp/pretext/main.ptx:1:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element proof, got section

@@ -1,0 +1,166 @@
+<section xml:id="classes_public-and-private-instance-variables">
+        <title>Public and Private Instance Variables</title>
+        <p>When we define a Python class, any instance's instance variables can be accessed within or outside of the class. For example, suppose we have a class named <c>Person</c> that represents a person and if they are a <q>child</q> (for our purposes, anyone under 18 years old is considered a child):</p>
+
+    <program xml:id="ac20_11_1" interactive="activecode" language="python">
+    
+        <input>
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def getGivenName(self): # returns the first name
+        return self.name.split()[0]
+
+    def getFamilyName(self): # returns the last name
+        return self.name.split()[-1]
+
+    def isChild(self):
+        return self.age &lt; 18
+
+p1 = Person("Ada B. Lovelace", 42)
+print(p1.getGivenName())  # prints "Ada"
+print(p1.getFamilyName()) # prints "Lovelace"
+print(p1.isChild())       # prints "False"
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+        <p>Now, suppose we hand our <c>Person</c> class off to another programmer (maybe you are working as part of a team or you are writing a library for other people to use). <term>They should not need to know exactly how you implemented your class; they should just be able to call the methods you have defined</term> (<c>getGivenName</c>, <c>getFamilyName</c>, and <c>isChild</c>) and get the correct results. Ideally, you should be able to change the implementation of your <c>Person</c> class without breaking any code that uses it. For example, you might decide to change the names of the instance variables or change how instances store and represent information (like storing given and family names separately). As long as the methods you have defined still work, these changes should not make the other programmer change their code. This idea is called <term>abstraction</term>.</p>
+        <p>However, there's a problem. The other programmer can also access <c>Person</c>'s instance variables from outside of the class definition, by writing <c>p1.name</c> and <c>p1.age</c>, if <c>p1</c> is our instance. If they do, then they are relying on the implementation details of our class. If we change the implementation, then their code will break. For example, suppose we change the name of the <c>age</c> instance variable to <c>howOld</c>. Then their code that refers to <c>.age</c> will break. Further, if the other programmer's code makes changes to the instance variables, then they might break our code. For example, if they change <c>p1.age</c> to be a string instead of an integer, then our <c>isChild</c> method will break.</p>
+        <p>These problems get more severe with larger and more complex classes. For these reasons, it is a good idea to <term>hide</term> the implementation details of our class from other programmers.</p>
+        <p>One way to hide implementation details is to make our instance variables <term>private</term>, which signals to other programmers that they should not access them directly. Unlike some other programming languages, Python does not <q>enforce</q> the idea of private instance variables, meaning that it is technically always possible for other programmers to reference and modify any instance variables. However, we can use naming conventions that (1) send a signal to other programmers that they should not access the instance variable directly and (2) make it harder for other programmers to access the instance variable directly.</p>
+        <p><term>Single underscores:</term> the first way to do this is to start an instance variable name with a single underscore (<c>_</c>). In the case of <c>Person</c>, we would rename our instance variables to be <c>_name</c> and <c>_age</c>. This signals to other programmers that they should not access the instance variables directly. However, it is still possible for them to do so. For example, they could write <c>p1._age</c> to access the <c>_age</c> instance variable. This is something they should realize is not a good idea, but it is still possible.</p>
+        <p><term>Double underscores:</term> The second way to do this is to start any instance variables with a double underscore (<c>__</c>). In the case of <c>Person</c>, we would rename our instance variables to be <c>__name</c> and <c>__age</c>. As is the case with a single underscore, this is a signal to other programmers that they should not access the instance variables directly. Further, <term>Python <q>mangles</q> any instance variables that start with two underscores to make them more difficult (but not impossible) to access</term>. Python mangles these names by adding the name of the class to the beginning of the instance variable name (<c>_classname__variablename</c>). For example, <c>__age</c> becomes <c>_Person__age</c>. Again, it is still possible for other programmers to do something they shouldn't, by accessing <c>.__Person_age</c>, but they have to work harder to figure out what it's called, and that may deter them.</p>
+        <p>For example, the following code throws an error when we try to access <c>p1.__age</c>:</p>
+
+    <program xml:id="ac20_11_2" interactive="activecode" language="python">
+    
+        <input>
+class Person:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def getGivenName(self): # returns the first name
+        return self.__name.split()[0]
+
+    def getFamilyName(self): # returns the last name
+        return self.__name.split()[-1]
+
+    def isChild(self):
+        return self.__age &lt; 18
+
+p1 = Person("Ada B. Lovelace", 42)
+print(p1.getGivenName())  # prints "Ada"
+print(p1.getFamilyName()) # prints "Lovelace"
+print(p1.isChild())       # prints "False"
+print(p1.__age)           # ERROR: AttributeError: 'Person' object has no attribute '__age'
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+        <p>In the code above, we have made the <c>__name</c> and <c>__age</c> instance variables private. We can still access them within the class definition using <c>self.__name</c> and <c>self.__age</c>, but we cannot access them directly outside of the class definition. Outside of the class definition, if we try to access <c>p1.__age</c>, we get an <c>AttributeError</c>. However, we can still access <c>p1._Person__age</c>.</p>
+
+    <exercise label="question20_11_1">
+        <statement>
+
+        <p>What is the term for hiding implementation details of a class from other programmers?</p>
+
+        </statement>
+<choices>
+
+            <choice correct="yes">
+                <statement>
+                    <p>Abstraction</p>
+                </statement>
+                <feedback>
+                    <p>Correct! The idea of hiding implementation details of a class represents Abstraction.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>Encapsulation</p>
+                </statement>
+                <feedback>
+                    <p>Encapsulation is closely related but it refers to the bundling of data with the methods that operate on that data.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>Inheritance</p>
+                </statement>
+                <feedback>
+                    <p>Inheritance refers to the ability of a class to inherit properties and methods from another class.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>Polymorphism</p>
+                </statement>
+                <feedback>
+                    <p>Polymorphism refers to the ability of an object to take many forms, depending on the data type or class.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+
+    <exercise label="question20_11_2">
+        <statement>
+
+        <p>How can we hide implementation details of instance variables in a class from other programmers in Python?</p>
+
+        </statement>
+<choices>
+
+            <choice>
+                <statement>
+                    <p>By making them inaccessible from outside the class.</p>
+                </statement>
+                <feedback>
+                    <p>While it would be ideal to make them inaccessible, Python does not enforce hard restrictions.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>By renaming them with a single underscore.</p>
+                </statement>
+                <feedback>
+                    <p>Correct, a single underscore signals that the variable is private and shouldn't be accessed directly, though it can still be. But there's also another way.</p>
+                </feedback>
+            </choice>
+
+            <choice>
+                <statement>
+                    <p>By renaming them with a double underscore.</p>
+                </statement>
+                <feedback>
+                    <p>Correct, a double underscore further discourages direct access by name mangling. But there's also another way.</p>
+                </feedback>
+            </choice>
+
+            <choice correct="yes">
+                <statement>
+                    <p>Both b and c are correct.</p>
+                </statement>
+                <feedback>
+                    <p>Correct! Python uses both single and double underscores as conventions to indicate that a variable is private.</p>
+                </feedback>
+            </choice>
+</choices>
+
+    </exercise>
+    </section>
+

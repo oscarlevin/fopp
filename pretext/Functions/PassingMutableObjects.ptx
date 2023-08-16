@@ -1,0 +1,109 @@
+<section xml:id="functions_passing-mutable-objects">
+        <title>Passing Mutable Objects</title>
+        <p>Take a look at the following code example. Can you predict what will happen when you run it?</p>
+
+    <program xml:id="ac11_12_1" interactive="activecode" language="python">
+    
+        <input>
+def double(y):
+    y = 2 * y
+
+num = 5
+double(num)
+print(num)
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+        <p>Use <term>Show CodeLens</term> to step through the code to see why the assignment to the formal parameter <c>y</c>
+            inside <c>double</c> did not affect the argument <c>num</c>. An assignment to a formal parameter inside a function <term>never</term>
+            affects the argument in the caller.</p>
+        <p>On the other hand, if you are passing a mutable object, such as a list, to a function, and the function alters the
+            object's state, that state change will be visible to the caller when the function returns. Take a look at the following
+            example.</p>
+
+    <program xml:id="ac11_12_2" interactive="activecode" language="python">
+    
+        <input>
+def changeit(lst):
+    lst[0] = "Michigan"
+    lst[1] = "Wolverines"
+
+mylst = ['our', 'students', 'are', 'awesome']
+changeit(mylst)
+print(mylst)
+        </input>
+<tests>
+
+
+</tests>
+
+    </program>
+        <p>Try stepping through this in codelens to see what happens. The state of the list referenced by <c>lst</c> is altered
+            by <c>changeit</c>, and since <c>mylst</c> is an alias for <c>lst</c>, <c>mylst</c> is affected by the actions taken by the function.</p>
+        <p>Look closely at this line:</p>
+        <pre>lst[0] = "Michigan"</pre>
+        <p>That statement modifies the state of <c>lst</c> by changing the value in slot 0. Although that line may appear to contradict the
+            statement above that <q>an assignment to a formal parameter inside a function never affects the argument in the caller,</q>
+            note that there is a difference between assigning to a <em>slot</em> of a list, and assigning to the list variable itself.
+            To see that difference, try changing that line to the following:</p>
+        <pre>lst = ["Michigan", "Wolverines"]</pre>
+        <p>Then, run again. This time, <c>mylist</c> is not altered. To understand why, use CodeLens to step carefully through the code
+            and observe how the assignment to <c>lst</c> causes it to refer to a separate list.</p>
+        <p>Take a moment to experiment some more with the <c>changeit</c> function. Change the body of the function to the following:</p>
+        <pre>lst.append("Michigan Wolverines")</pre>
+        <p>Step through using CodeLens. You should see that <c>mylst</c> is affected by this change, since the state of the list is altered.</p>
+        <p>Then, try again with this as the body:</p>
+        <pre>lst = lst + ["Michigan Wolverines"]</pre>
+        <p>Step through using CodeLens. Here, we create a new list using the concatenation operator, and <c>mylst</c> is not affected by the change.</p>
+        <p>Understanding the techniques that functions can and cannot use to alter the state of mutable parameters is important.
+            You may want to take some time to study the information on this page more thoroughly and play with the examples until
+            you feel confident about your grasp of the material.</p>
+        <p><term>Check Your Understanding</term></p>
+
+    <exercise label="mutobj-q1">
+        <statement>
+
+        <p>What is the output of the following code fragment?</p>
+        <program language="python"><input>
+def myfun(lst):
+    lst = [1, 2, 3]
+
+mylist = ['a', 'b']
+myfun(mylist)
+print(mylist)
+</input></program>
+</statement><choices><choice correct="yes"><statement id="mutobj-q1_opt_a">        <p>[&#8216;a', &#8216;b']</p>
+</statement><feedback id="mutobj-q1_opt_a">
+        <p>Correct! <c>mylist</c> is not changed by the assignment in <c>myfun</c>.</p>
+</feedback></choice><choice><statement id="mutobj-q1_opt_b">        <p>[1, 2, 3]</p>
+</statement><feedback id="mutobj-q1_opt_b">
+        <p>Incorrect. <c>mylist</c> is not changed by the assignment in <c>myfun</c>.</p>
+</feedback></choice></choices>
+    </exercise>
+
+    <exercise label="mutobj-q2">
+        <statement>
+
+        <p>What is the output of the following code fragment?</p>
+        <program language="python"><input>
+def myfun(lst):
+    del lst[0]
+
+mylist = ['a', 'b']
+myfun(mylist)
+print(mylist)
+</input></program>
+</statement><choices><choice><statement id="mutobj-q2_opt_a">        <p>[&#8216;a', &#8216;b']</p>
+</statement><feedback id="mutobj-q2_opt_a">
+        <p>Incorrect. <c>myfun</c> alters the state of the list object by removing the value at slot 0.</p>
+</feedback></choice><choice correct="yes"><statement id="mutobj-q2_opt_b">        <p>[&#8216;b']</p>
+</statement><feedback id="mutobj-q2_opt_b">
+        <p>Correct! <c>myfun</c> alters the state of the list object by removing the value at slot 0.</p>
+</feedback></choice></choices>
+    </exercise>
+    </section>
+
