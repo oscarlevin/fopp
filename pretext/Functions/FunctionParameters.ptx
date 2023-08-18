@@ -84,7 +84,7 @@ hello3("Kitty", 11)
             parentheses are evaluated to produce values. Then those values are matched up positionally
             with the formal parameters. The first parameter name is bound to the first value
             provided. The second parameter name is bound to the second value provided. And so on.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question11_3_1">
         <statement>

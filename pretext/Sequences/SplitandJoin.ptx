@@ -60,7 +60,7 @@ print("".join(wds))
     </program>
         <p>The list that you glue together (<c>wds</c> in this example) is not modified.  Also,
             you can use empty glue or multi-character strings as glue.</p>
-        <p><term>Check your understanding</term></p>
+        
 
 <exercise label="ac5_9_4">
     <statement>

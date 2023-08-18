@@ -41,7 +41,7 @@ print(keep_evens([3, 4, 6, 7, 0, 1]))
 </tests>
 
     </program>
-        <p><term>Check Your Understanding</term></p>
+        
 
 <exercise label="ac21_3_3">
     <statement>

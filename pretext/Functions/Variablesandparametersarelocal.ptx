@@ -37,7 +37,7 @@ print(y)
         <p>So it is not possible for a function to set some local variable to a value, complete its execution, and then when it
             is called again next time, recover the local variable. Each call of the function creates new local variables, and
             their lifetimes expire when the function returns to the caller.</p>
-        <p><term>Check Your Understanding</term></p>
+        
 
     <exercise label="question11_7_1">
         <statement>

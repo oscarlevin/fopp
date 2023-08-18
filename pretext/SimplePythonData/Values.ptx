@@ -32,7 +32,7 @@ print("Hello, World!")
             interchangeably.  We'll come back to a deeper understanding of what a class
             is in later chapters.</p>
         <p>You will soon encounter other types of objects as well, such as lists and dictionaries. Each of these has its own special representation for specifying an object as a literal in a program, and for displaying an object when you print it. For example, list contents are enclosed in square brackets <c>[ ]</c>. You will also encounter some more complicated objects that do not have very nice printed representations: printing those won't be very useful.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question2_2_1">
         <statement>

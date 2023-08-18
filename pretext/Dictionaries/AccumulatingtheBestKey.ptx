@@ -59,7 +59,7 @@ print("key " + best_key_so_far + " has the highest value, " + str(d[best_key_so_
 
     
             </solution></exercise>
-        <p><term>Check your Understanding</term></p>
+        
 
 <exercise label="ac10_7_2">
     <statement>

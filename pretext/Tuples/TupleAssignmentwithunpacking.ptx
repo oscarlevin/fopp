@@ -142,7 +142,7 @@ for idx, fruit in enumerate(fruits):
 </tests>
 
     </program>
-            <p><term>Check your Understanding</term></p>
+            
 
     <exercise label="question12_4_2">
         <statement>

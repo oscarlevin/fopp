@@ -22,7 +22,7 @@ print(sorted(L2, reverse=True))
                 prevents this, so you have to provide keywords for the <c>reverse</c> and <c>key</c> parameters. In this situation, it is
                 more convenient to use the keyword mechanism anyway.</p>
         </note>
-        <p><term>Check Your Understanding</term></p>
+        
 
 <exercise label="ac18_2_2">
     <statement>

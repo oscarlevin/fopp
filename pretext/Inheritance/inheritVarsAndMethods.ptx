@@ -188,7 +188,7 @@ p1 = Pet("Teddy")
 p1.chasing_rats()
 </input></program>
             <p>The Python interpreter looks for an instance variable or method called <c>chasing_rats</c> on the <c>Pet</c> class. It doesn't exist. <c>Pet</c> has no parent classes, so Python signals an error.</p>
-            <p><term>Check your understanding</term></p>
+            
 
     <exercise label="question_inheritance_1">
         <statement>

@@ -74,7 +74,7 @@ print("The area of a circle with radius", radius, "is:", area)
             by designing an algorithm. The programmer often expresses the algorithm in
             pseudocode, then converts the algorithm to a program for the computer to execute.
             In the next section, you will learn how to execute Python programs on a computer.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question1_2_2">
         <statement>

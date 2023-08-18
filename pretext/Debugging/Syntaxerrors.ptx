@@ -54,7 +54,7 @@ print("All finished!")
             statements at the beginning of the line, unless you are using a flow control statement like a <c>for</c> or an <c>if</c> statement
             (we'll discuss these soon&#8230; stay tuned!). To see an example of this kind of problem, modify the program above by inserting a
             couple of spaces at the beginning of one of the lines.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question4_4_1">
         <statement>

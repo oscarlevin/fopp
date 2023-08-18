@@ -47,7 +47,7 @@ print(eng2sp['one'])
     </input>
 </program>
         <p>The key <c>'two'</c> yields the value <c>'dos'</c>. The key <c>one</c> yields the value <c>uno</c>.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question10_1_1">
         <statement>

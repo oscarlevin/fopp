@@ -2,7 +2,7 @@
         <title>Introduction</title>
         
         
-        
+        <introduction>
 
     <video xml:id="typesnconvert" youtube="vNfCfowr-pQ" width="auto"/>
             <p>This chapter introduces several basic building blocks of Python programs:</p>
@@ -21,6 +21,7 @@
             </li>
         </ul></p>
         <p>These are the basic building blocks that are assembled to create programs that you interact with everyday&#8212;from the software running on your smartwatch, to the infrastructure behind the largest websites, and every app running on your phone.</p>
+    </introduction>
         <subsection xml:id="simple-python-data_learning-goals">
             <title>Learning Goals</title>
             <p><ul>

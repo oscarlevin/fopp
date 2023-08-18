@@ -42,7 +42,7 @@ print(mylen([1, 2, 7]))
 </block><block order="4">
 <cline>print(mylen("hello"))</cline>
 <cline>print(mylen([1, 2, 7]))</cline>
-</block></blocks></exercise>        <p><term>Check your Understanding</term></p>
+</block></blocks></exercise>        
 
 <exercise label="ac11_5_2">
     <statement>

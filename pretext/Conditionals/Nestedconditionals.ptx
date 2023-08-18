@@ -59,7 +59,7 @@ else:
         print("x and y must be equal")
     </input>
 </program>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question7_8_1">
         <statement>

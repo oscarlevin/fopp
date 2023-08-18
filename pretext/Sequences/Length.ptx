@@ -83,7 +83,7 @@ print(len(alist[0]))
 
     </program>
         <p>Note that <c>alist[0]</c> is the string <c>"hello"</c>, which has length 5.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question5_5_1">
         <statement>

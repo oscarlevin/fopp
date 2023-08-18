@@ -237,7 +237,7 @@ print(inventory.get("cherries",0))
 </tests>
 
     </program>
-            <p><term>Check your understanding</term></p>
+            
 
     <exercise label="question10_3_1">
         <statement>

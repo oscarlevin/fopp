@@ -142,7 +142,7 @@ print(a)
     </program>
         <p>This might become tedious though, and difficult if the length of the string is long.
             Can you think of a better way to do this?</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question8_7_1">
         <statement>

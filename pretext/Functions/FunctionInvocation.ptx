@@ -48,7 +48,7 @@ hello()  # do it again, just because we can...
                 require parameters, it's easy to forget the parenthesis. This is less common, but still possible, when trying to
                 call functions that require parameters.</p>
         </note>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question11_2_1">
         <statement>

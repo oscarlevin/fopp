@@ -43,7 +43,7 @@
             available in this online textbook. To do that, you will either
             install python on your computer so that it can run natively, or use a remote server that provides either a
             command line shell or a jupyter notebook environment.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question1_3_1">
         <statement>

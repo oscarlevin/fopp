@@ -184,7 +184,7 @@ print(longer_than_five(list2))
                 <p>Assign 200 to variable <c>squareResult</c></p>
             </li>
         </ol></p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question11_4_1">
         <statement>

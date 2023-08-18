@@ -180,7 +180,7 @@ print("s: " + str(letter_counts['s']) + " occurrences")
             variable <c>c</c>. If no such key is present, <c>get</c> returns 0, and <c>letter_counts[c]</c> is
             set to <c>1</c> (0 + 1 = 1).  If the key is present, <c>get</c> retrieves its value, which is
             then incremented.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question10_5_1">
         <statement>

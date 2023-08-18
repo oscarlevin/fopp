@@ -105,7 +105,7 @@ z = square(x)
 print(z)
     </input>
 </program>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question11_8_1">
         <statement>

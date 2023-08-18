@@ -15,7 +15,7 @@
         <p>What does all that mean for us when we try to understand a program? Don't read from top to bottom. Instead, follow the
             flow of execution.  This means that you will read the def statements as you are scanning from top to bottom, but you
             should skip the body of the function until you reach a point where that function is called.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question11_10_1">
         <statement>

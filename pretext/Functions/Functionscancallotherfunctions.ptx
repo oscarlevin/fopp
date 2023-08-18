@@ -79,7 +79,7 @@ print(most_common_letter("abbbbbbbbbbbccccddddd"))
 </tests>
 
     </program>
-        <p><term>Check your Understanding</term></p>
+        
 
 <exercise label="ac11_9_1">
     <statement>

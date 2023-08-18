@@ -1,6 +1,6 @@
 <section xml:id="transforming-sequences_chapter-assessment-list-methods">
         <title>Chapter Assessment - List Methods</title>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="assess_question4_1_1_1">
         <statement>
@@ -244,7 +244,7 @@ myTests().main()
 </exercise>
         <subsection xml:id="transforming-sequences_chapter-assessment-aliases-and-references">
             <title>Chapter Assessment - Aliases and References</title>
-            <p><term>Check your understanding</term></p>
+            
 
         <exercise label="assess_question3_3_1_1">
             <statement>
@@ -505,7 +505,7 @@ myTests().main()
         </subsection>
         <subsection xml:id="transforming-sequences_chapter-assessment-for-loop-mechanics">
             <title>Chapter Assessment - For Loop Mechanics</title>
-            <p><term>Check your understanding</term></p>
+            
 
     <exercise label="assess_question5_1_1_1">
         <statement>
@@ -690,7 +690,7 @@ myTests().main()
         </subsection>
         <subsection xml:id="transforming-sequences_chapter-assessment-accumulator-pattern">
             <title>Chapter Assessment - Accumulator Pattern</title>
-            <p><term>Check your understanding</term></p>
+            
 
     <exercise label="assess_question5_2_1_1">
         <statement>

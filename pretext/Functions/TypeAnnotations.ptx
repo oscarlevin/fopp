@@ -135,7 +135,7 @@ def add_em_up(nums: list[int | float]) -&gt; int | float:
 </tests>
 
     </program>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question_ta_1">
         <statement>

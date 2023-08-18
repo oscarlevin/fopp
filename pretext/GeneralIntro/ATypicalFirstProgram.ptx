@@ -27,7 +27,7 @@ print("Hello, World!")
         <p>Some people judge the quality of a programming language by the simplicity of
             the Hello, World! program. By this standard, Python does about as well as
             possible.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question1_7_1">
         <statement>

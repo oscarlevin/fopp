@@ -49,7 +49,7 @@ else:
             all the statements under the <c>else</c> clause are executed.</p>
         <p>There is no limit on the number of statements that can appear under the two clauses of an
             <c>if</c> statement, but there has to be at least one statement in each block.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question7_6_1">
         <statement>

@@ -99,7 +99,7 @@
             <p>A common error that novice programmers make is not realizing that all these ways of reading the file contents,
                 <term>use up the file</term>. After you call readlines(), if you call it again you'll get an empty list.</p>
         </note>
-        <p><term>Check your Understanding</term></p>
+        
         <raw format="html" xml:space="preserve">&lt;pre id="school_prompt.txt"&gt;
 Writing essays for school can be difficult but
 many students find that by researching their topic that they

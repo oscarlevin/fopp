@@ -28,7 +28,7 @@ print(opposites['right'])
 acopy = opposites.copy()
 acopy['right'] = 'left'    # does not change opposites
 </input></program>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question10_4_1">
         <statement>

@@ -5,7 +5,7 @@
             lists or dictionaries can also contain lists and dictionaries. There can be many layers of nesting.</p>
         <p>Only the values in dictionaries can be objects of arbitrary type. The keys in dictionaries must be one of the immutable
             data types (numbers, strings, tuples).</p>
-        <p><term>Check Your Understanding</term></p>
+        
 
     <exercise label="question17_2_1">
         <statement>

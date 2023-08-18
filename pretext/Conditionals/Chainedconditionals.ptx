@@ -46,7 +46,7 @@ else:
             versions of conditionals that Python can understand (imagine an if statement with twenty elif statements), those
             other versions must follow the same order as seen below.</p>
         <image source="Conditionals/Figures/valid_conditionals.png" width="50%" alt="shows a unary conditiona, a binary conditional, a conditional with if, elif, else, and a conditional with if, elif, and elif."/>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question7_9_1">
         <statement>

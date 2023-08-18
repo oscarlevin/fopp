@@ -70,7 +70,7 @@ print([x*2 for x in things if x % 2 == 0])
 </tests>
 
     </program>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question21_4_1">
         <statement>

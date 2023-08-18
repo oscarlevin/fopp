@@ -74,7 +74,7 @@ for fruit in new_order:
 
     </program>
         <p>We can use this for any numerical value that we want to sort, however this will not work for strings.</p>
-        <p><term>Check Your Understanding</term></p>
+        
 
     <exercise label="question18_5_1">
         <statement>

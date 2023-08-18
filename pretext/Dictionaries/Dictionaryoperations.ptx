@@ -40,7 +40,7 @@ numItems = len(inventory)
 </program>
         <p>Notice that there are now 512 bananas&#8212;the dictionary has been modified. Note also that the <c>len</c> function also
             works on dictionaries. It returns the number of key-value pairs.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question10_2_1">
         <statement>

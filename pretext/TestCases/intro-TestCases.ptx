@@ -35,7 +35,7 @@
         <note>
             <p>A note to instructors: this chapter is deliberately structured so that you can introduce testing early in the course if you want to. You will need to cover chapter 8, on Conditionals, before starting this chapter, because that chapter covers Booleans. The subchapters on testing types and testing conditionals can be covered right after that. The subchapter on testing functions can be delayed until after you have covered function definition.</p>
         </note>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question19_1_1">
         <statement>

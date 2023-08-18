@@ -144,7 +144,7 @@ print('Luggage check complete.')
                 right-hand side, in order to get the same effect.</p>
             <p>To summarize this discussion on smart evaluation, keep in mind that when you are performing potentially dangerous
                 operations in an <c>if</c> statement or <c>while</c> loop using boolean logic with <c>and</c> or <c>or</c>, order matters!</p>
-            <p><term>Check your understanding</term></p>
+            
 
     <exercise label="question7_3_1">
         <statement>

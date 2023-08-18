@@ -18,7 +18,7 @@ for achar in "Go Spot Go":
         <p>The loop variable <c>achar</c> is automatically reassigned each character in the string <q>Go Spot Go</q>.
             We will refer to this type of sequence iteration as <term>iteration by item</term>. Note that the for loop
             processes the characters in a string or items in a sequence one at a time from left to right.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question6_4_1">
         <statement>

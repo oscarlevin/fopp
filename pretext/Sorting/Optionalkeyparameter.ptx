@@ -106,7 +106,7 @@ print(L2)
                 <c>key=some_function</c> in the function invocation, the word key is there because it is the name of the parameter,
                 specified in the definition of the sort function, not because we are using keyword-based parameter passing.</p>
         </note>
-        <p><term>Check Your Understanding</term></p>
+        
 
 <exercise label="ac18_3_4">
     <statement>

@@ -25,7 +25,7 @@ print("This is always printed")
 
     </program>
         <p>What would be printed if the value of <c>x</c> is negative?  Try it.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question7_7_1">
         <statement>

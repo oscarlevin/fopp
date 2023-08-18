@@ -75,7 +75,7 @@ print(result)
             of the seed (which is one of the attributes of the generator) will be updated.  The good news is that each time you run
             your program, the seed value is likely to be different meaning that even though the random numbers are being created
             algorithmically, you will likely get random behavior each time you execute.</p>
-        <p><term>Check your understanding</term></p>
+        
 
     <exercise label="question13_2_1">
         <statement>

@@ -62,7 +62,7 @@ print(mylst)
         <p>Understanding the techniques that functions can and cannot use to alter the state of mutable parameters is important.
             You may want to take some time to study the information on this page more thoroughly and play with the examples until
             you feel confident about your grasp of the material.</p>
-        <p><term>Check Your Understanding</term></p>
+        
 
     <exercise label="mutobj-q1">
         <statement>
